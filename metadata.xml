@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iPOJO>
+	<instance component="de.berlios.vch.search.web.Activator" name="vch.web.search" />
+    <instance component="de.berlios.vch.search.web.SearchServlet" name="vch.web.search.servlet" />
+</iPOJO>
