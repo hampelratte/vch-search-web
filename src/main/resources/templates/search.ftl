@@ -36,21 +36,21 @@ function showDetails(parser, uri, isVideoPage) {
         success: function(response) {
             var video = response.video;
             var actions = response.actions;
-            
+
             var html = '<h1>' + video.title + '</h1>';
-            
+
             // add a preview, if available
             if(video.thumb) {
                 html += '<p><img src="'+video.thumb+'" alt="Preview" class="thumb ui-widget-content ui-corner-all" /></p>';
             }
-            
+
             // add the pubdate, if available
             if(video.pubDate) {
                 var date = new Date();
                 date.setTime(video.pubDate);
                 html += '<p><strong>' + date.toLocaleString();
             }
-            
+
             // add the duration, if available
             if(video.duration) {
                 html += ' - ';
@@ -65,21 +65,21 @@ function showDetails(parser, uri, isVideoPage) {
                     html += minutes+':'+secs + ' ${I18N_MINUTES}'; 
                 }
             }
-            
+
             html += '</strong></p>';
-            
+
             // add the description, if available
             if(video.desc) {
                 html += '<p>' + video.desc + '</p>';
             } 
-            
+
             // add web actions
             if(video.video && actions) {
                 for(var i=0; i<actions.length; i++) {
                     html += '<a style="margin-right: 1em;" id="action'+i+'" href="'+actions[i].uri+'">'+actions[i].title+'</a>';
                 }
             }
-                 
+
             // display the details
             $('#details').html(html);
             if(video.video) {
@@ -91,7 +91,7 @@ function showDetails(parser, uri, isVideoPage) {
                 }
             }
             $('#open').button( {icons: { primary: 'ui-icon-extlink'}} );
-            
+
         }
     });
 }
@@ -115,7 +115,7 @@ function showDetails(parser, uri, isVideoPage) {
         <ul>
         <#list RESULTS.pages as provider>
         <li>
-            <a href="javascript:void()" onclick="$('#results div.result-page').hide(0, function() {$('#provider_${provider_index}').show(0);});">${provider.title} (${provider.pages?size})</a>
+            <a href="javascript:void(0)" onclick="$('#results div.result-page').hide(0, function() {$('#provider_${provider_index}').show(0);});">${provider.title} (${provider.pages?size})</a>
         </li>
         </#list>    
         </ul>
