@@ -5,6 +5,7 @@
 	<packaging>bundle</packaging>
 	<name>VCH Search Web Interface</name>
 	<version>1.0.0-SNAPSHOT</version>
+    <description>Web interface to search for videos on different sites.</description>
     
     <parent>
         <artifactId>parent</artifactId>
@@ -12,8 +13,13 @@
         <version>2</version>
         <relativePath>../vch-parent/pom.xml</relativePath>
     </parent>
-    
-    <description>Web interface to search for videos on different sites.</description>
+
+    <scm>
+        <connection>scm:git:git@github.com/hampelratte/vch-search-web.git</connection>
+        <developerConnection>scm:git:git@github.com:hampelratte/vch-search-web.git</developerConnection>
+        <url>https://github.com/hampelratte/vch-search-web.git</url>
+    </scm>
+
     <dependencies>
 		<dependency>
 			<groupId>de.berlios.vch</groupId>
